@@ -5,6 +5,7 @@
     box-sizing: border-box;
 }
 
+
 .header-main {
     width: 100%;
     line-height: 1.5 !important;
@@ -12,6 +13,7 @@
     border-radius: 10px;
     font-size: 12pt !important;
     margin: 0 !important;
+    transition: all .25s ease-in-out;
 }
 
 .header_main_container {
@@ -148,7 +150,7 @@ img {
 
 .slider {
     width: 85%;
-    margin: 25px auto;
+    margin: 10px auto;
     position: relative;
 }
 
@@ -232,4 +234,64 @@ img {
     height: 100%;
     object-fit: cover;
     border-radius: 10px;
+}
+
+.cotianer {
+    padding: 0 15px;
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.row {
+    width: 100%;
+}
+
+#container_header {
+    padding: 0 20px;
+}
+
+.title_cotianer {
+    color: #39464E;
+    font-size: 30px;
+}
+
+.Feature {
+    padding: 20px;
+    width: 80%;
+}
+
+.cotianer {
+    padding: 0px 40px;
+}
+
+.card {
+    height: 160px;
+    position: relative;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    margin: 5px 5px;
+    background-color: #fff;
+    cursor: pointer;
+
+}
+
+.card:hover {
+    box-shadow: 5px 5px 15px 5px rgb(0 0 0 0.6);
+}
+
+.card-title {
+    background: #fff;
+    color: #333;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.card_text {
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+#Algorithms {
+    margin-top: 50px;
 }
