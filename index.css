@@ -238,7 +238,7 @@ img {
 
 .cotianer {
     padding: 0 15px;
-    width: 80%;
+    width: 90%;
     margin-right: auto;
     margin-left: auto;
 }
@@ -248,7 +248,7 @@ img {
 }
 
 #container_header {
-    padding: 0 20px;
+    padding: 30px 20px;
 }
 
 .title_cotianer {
@@ -261,8 +261,16 @@ img {
     width: 80%;
 }
 
+.Feature:hover {
+    box-shadow: 10px 10px 14px #333
+}
+
 .cotianer {
-    padding: 0px 40px;
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .card {

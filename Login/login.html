@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="/toast.js/toast.css">
+</head>
+
+<body>
+    <div class="container" id="container">
+        <div class="signin-signup">
+            <form action="" class="sign-in-form">
+                <h2 class="title">Sign in</h2>
+                <div class="input-field">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Username" id="username">
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Password" id="password">
+                    <i class="fa-solid fa-eye-slash"></i>
+                </div>
+                <input type="submit" value="Login" class="btn">
+                <p class="social-text">Or Sign in width social</p>
+                <div class="socal-media">
+                    <a href="#" class="social-icon"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </form>
+
+            <!-- Signup -->
+
+            <form action="" class="sign-up-form" id="form-2">
+                <h2 class="title">Sign up</h2>
+                <div class="input-field">
+                    <i class="fas fa-user icon"></i>
+                    <input type="text" placeholder="Username" id="username-sign-up">
+                    <span class="error-text"></span>
+                </div>
+                <div class="input-field">
+                    <i class="fa-solid fa-envelope icon"></i>
+                    <input type="email" placeholder="Email" id="email-sginup" class="input1">
+                    <span class="error-text"></span>
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-lock icon"></i>
+                    <input type="password" placeholder="Password" id="password-signup" class="input">
+                    <i class="fa-solid fa-eye-slash"></i>
+                    <span class="error-text"></span>
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-lock icon"></i>
+                    <input type="password" placeholder="Confrim Password" id="cofirm-signup" class="input">
+                    <i class="fa-solid fa-eye-slash"></i>
+                    <span class="error-text"></span>
+                </div>
+                <input type="submit" value="Signup" class="btn">
+                <p class="social-text">Or Sign in width social</p>
+                <div class="socal-media">
+                    <a href="#" class="social-icon"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </form>
+        </div>
+        <div class="panner-conatiner">
+            <div class="panner left-paner">
+                <div class="content">
+                    <h3>Member Of the Musical</h3>
+                    <p> Enjoy the music around you</p>
+                    <button class="btn" id="sign-in-btn">Sign in</button>
+                </div>
+               
+            </div>
+            <div class="panner right-paner">
+                <div class="content">
+                    <h1 style="text-transform: uppercase;">Welcome back</h1>
+                    <button class="btn" id="sign-up-btn">Sign up</button>
+                </div>
+    
+            </div>
+        </div>
+    </div>
+    <div id="toast"> </div>
+    <script src="login.js"></script>
+    <script src="/toast.js/toast.js"></script>
+    <script>
+        //  mong muon chua chung ta
+        Validator({
+            form: `#form-2`,
+            Error: `.error-text`,
+            rules: [
+                Validator.isRequired('#username-sign-up'),
+                Validator.isEmail('#email-sginup', "You entered not email"),
+                Validator.minlength('#password-signup', 8),
+                Validator.isRequired('#cofirm-signup'),
+                Validator.isCofrim('#cofirm-signup', function () {
+                    return document.querySelector('#form-2 #password-signup').value;
+                }, "Password don't match"),
+            ],
+            onSubmit: function (data) {
+                console.log(data);
+            }
+        });
+
+    </script>
+</body>
+
+</html>
