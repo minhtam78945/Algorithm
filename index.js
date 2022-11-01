@@ -9,38 +9,8 @@ const sliderItemsWidth = sliderItems[0].offsetWidth;
 const sliderLength = sliderItems.length;
 let index = 0;
 let PositionX = 0;
+
 const handleSilder = () => {
-    const handlechange = (dir) => {
-        if (dir === 1) {
-            if (index >= sliderLength - 1) {
-                index = sliderLength - 1;
-                return;
-            }
-            PositionX -= sliderItemsWidth;
-            sliderMain.style = ` transform : translateX(${PositionX}px)`;
-            index++;
-        }
-        else if (dir === -1) {
-            if (index <= 0) {
-                index = 0;
-                return;
-            }
-            PositionX += sliderItemsWidth;
-            sliderMain.style = ` transform : translateX(${PositionX}px)`;
-            index--;
-        }
-        [...prop].forEach(element => element.classList.remove("active"))
-        sliderDotitems[index].classList.add("active");
-    }
-    var timer = setInterval(() => {
-        handlechange(1);
-    }, 3000)
-    sliderNext.addEventListener("click", function () {
-        handlechange(1);
-    });
-    sliderPrev.addEventListener("click", function () {
-        handlechange(-1);
-    });
     //Toan tu Prop
     const prop = sliderDotitems;
     [...prop].forEach(item => (
@@ -54,6 +24,37 @@ const handleSilder = () => {
             sliderMain.style = ` transform : translateX(${PositionX}px)`;
         })
     ))
+
+    const handlechange = (dir) => {
+      index += dir;
+      PositionX -= dir*sliderItemsWidth;
+      if (index === sliderLength){
+        console.log("index === sliderLength - 1")
+        index = 0;
+        PositionX += sliderLength * sliderItemsWidth;
+      }
+      else if (index === -1){
+        console.log("index === 0")
+        index = sliderLength - 1;
+        PositionX -= sliderLength * sliderItemsWidth;
+      }
+      sliderMain.style = ` transform : translateX(${PositionX}px)`;
+      console.log(index);
+      [...prop].forEach(element => element.classList.remove("active"))
+      sliderDotitems[index].classList.add("active");
+    }
+    var timer = setInterval(() => {
+        handlechange(1);
+    }, 3000);
+    sliderNext.addEventListener("click", function () {
+        clearInterval(timer);
+        handlechange(1);
+    });
+    sliderPrev.addEventListener("click", function () {
+        clearInterval(timer);
+        handlechange(-1);
+    });
+
 };
 window.addEventListener("load", handleSilder);
 var modalWrap = null;
