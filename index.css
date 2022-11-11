@@ -273,9 +273,6 @@ img {
     width: 80%;
 }
 
-.Feature:hover {
-    box-shadow: 5px 0px 5px 0px #333
-}
 
 .cotianer {
     padding: 20px;
@@ -296,9 +293,7 @@ img {
 
 }
 
-.card:hover {
-    box-shadow: 5px 5px 15px 5px rgb(0 0 0 0.6);
-}
+
 
 .card-title {
     background: #fff;
