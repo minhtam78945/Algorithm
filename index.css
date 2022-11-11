@@ -1,5 +1,6 @@
 * {
     font-family: "Poppins", sans-serif;
+    text-decoration: none;
 }
 
 
@@ -35,6 +36,7 @@
 .header_main_listtiem {
     display: inline;
     cursor: pointer;
+    position: relative;
     font-size: 82%;
     position: relative;
 }
@@ -71,6 +73,22 @@
     width: 250px;
     display: flex;
 
+}
+
+.subnav-content {
+    display: none;
+    position: absolute;
+    left: 0px;
+    color: white;
+    background-color: #EFECE9;
+    width: 100%;
+    z-index: 1;
+}
+
+.header_main_listtiem:hover .subnav-content {
+    display: block;
+    width: 1000px;
+    top: 0
 }
 
 .search::before {
@@ -377,6 +395,7 @@ img {
         opacity: 1;
     }
 }
-#tittle-span:hover{
-  color: #999;
-} 
+
+#tittle-span:hover {
+    color: #999;
+}
