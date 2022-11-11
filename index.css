@@ -377,3 +377,6 @@ img {
         opacity: 1;
     }
 }
+#tittle-span:hover{
+  color: #999;
+} 
