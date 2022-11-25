@@ -76,12 +76,6 @@ const Showmodal = () => {
   </div>
   <div class="modal-body">
       <div class = " content ">
-      <h5>Single Linked List</h5>
-      <img src = "https://topdev.vn/blog/wp-content/uploads/2020/10/Single-linked-list-3.png" alt =""/>
-      <p><a href="#" role="button" class="btn btn-secondary popover-test" title="Popover title"
-              data-content="Popover body content is set in this attribute.">Click here to enter data</a></p>
-      </div>
-      <div class = " content ">
       <h5>Doubly Linked </h5>
       <img src = "https://chidokun.github.io/images/post/software/doubly-linked-list/1.png" alt =""/>
       <p><a href="#" role="button" class="btn btn-secondary popover-test" title="Popover title"
@@ -95,7 +89,6 @@ const Showmodal = () => {
       </div>
         </div>
         <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">Save changes</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
       </div>
